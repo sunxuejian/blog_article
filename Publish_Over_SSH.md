@@ -24,7 +24,7 @@
 
 ![ssh配置](image/sshset.jpg)
 
-## 如何生存ssh密匙
+## 如何生成ssh密匙
 
 > 如果需要jenkins远程登录到目标主机,需要在目标主机对应的用户下面生存ssh密匙
 
@@ -43,4 +43,18 @@ ssh-keygen -t rsa -C "xxxx@email.com"
 
 ![测试](image/test.jpg)
 
-> 到此安装和配置ssh结束,接下来要具体配置我们的jenkins job,让他去使用ssh做持续集成
+> 到此安装和配置ssh结束,接下来要具体配置我们的jenkins job
+
+# Jenkins Job中使用Publish over SSH
+
+1. 点开你的jenkins job 拉倒构建后操作这一栏,选择我们安装好的publish over ssh
+
+![SSH配置](image/job1.png)
+
+2. 配置说明
+
+![SSH配置](image/set.png)
+
+到这所有的配置都结束了,非常简单,这个<font color=red>Transfer Set</font>可以配置很多个,非常灵活.<font color=red>Exec command<font> 执行块可以在文件上传后的一些操作.
+
+> <font color=red>注意:</font> Exec command这个里面所写的脚本一定要确保正常退出,不然jenkins会编译不过,可能引发超时,如果遇到该问题,请参考这篇文章:[Publish over SSH 超时问题](https://blog.csdn.net/u013066244/article/details/52788407)
