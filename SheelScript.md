@@ -1,4 +1,9 @@
-# 常用的shee脚本语法
+title: shell常用语法
+date: 2018-12-16 11:39:48
+tags:
+  - Linux
+  - shell
+---
 
 ### 比较符
 
